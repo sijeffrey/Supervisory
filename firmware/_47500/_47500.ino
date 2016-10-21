@@ -15,6 +15,7 @@ const int freq = 2000;
 // Remote IO
 
 const int chipCount = 2;
+const int totalRegisters = 3;
 
 // VARAIBLES
 
@@ -24,18 +25,16 @@ byte FLASHER = 0;
 
 int chip[chipCount] = { 0x20, 0x21 }; // addresses of MCP23017 GPIO chips
 
-byte alarmPin[3] = { 0x00, 0x00, 0x00 };  // set all alarm inputs to zero
-
 // REGISTERS
 
 // flashing lamp & alarm active
 
-byte flashReg[3] = { 0x00, 0x00, 0x00 }; // initialise flash groups 
-byte alarmReg[3] = { 0x00, 0x00, 0x00 }; // initialise alarm groups
+byte flashReg[totalRegisters] = { 0x00, 0x00, 0x00 }; // initialise flash groups 
+byte alarmReg[totalRegisters] = { 0x00, 0x00, 0x00 }; // initialise alarm groups
 
 // steady lamp & alarm acknowledged
 
-byte steadyReg[3] = { 0x00, 0x00, 0x00 }; // initialise steady group
+byte steadyReg[totalRegisters] = { 0x00, 0x00, 0x00 }; // initialise steady group
 
 // set up pins
 
