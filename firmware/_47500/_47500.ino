@@ -66,8 +66,8 @@ byte steadyReg[totalRegisters] = { 0x00, 0x00, 0x00 }; // initialise steady grou
 
 // set up pins
 
-void setup() {
-
+void setup() 
+{
   // set up local pins
   pinMode(acceptPin, INPUT);
   pinMode(resetPin, INPUT);
