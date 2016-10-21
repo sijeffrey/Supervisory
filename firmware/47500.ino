@@ -26,4 +26,3 @@ void alarms() {
   // light related lamps  // loop over the lamp array and set them all to flash array or steady array values:  for (int row = 0; row < rowCount; row++) {    for (int col = 0; col < colCount; col++) {      digitalWrite(lampPin[row][col], (flashReg[row][col] && FLASHER) || (steadyReg[row][col]));    }  }}
 // run main program
 void loop(){  // do main program function  alarms();  // read the inputs of bank B  Wire.beginTransmission(0x20);  Wire.write(0x13);  Wire.endTransmission();  Wire.requestFrom(0x20, 1);  inputs=Wire.read();
-}
