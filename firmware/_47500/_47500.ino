@@ -1,4 +1,32 @@
-// this is a ATmega program to check inputs for interuptions and then trigger output as per Bruce Supervisory System
+/*
+  Supervisory Alarm System
+  revision 1.0
+
+  Copyright (c) 2016, Simon Jeffrey, All rights reserved
+
+  This program is free software: you can redistribute it and/or modify 
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+
+// Program scans PORT B and if low level detected will flash corresponding pin
+// on PORT A. Also an alert tone and output HIGH is send to alert the user.
+// Once the ACCEPT button is pressed (goes LOW) the PORT A pin will stay HIGH.
+// Also the external alert tone and output pin will mute and go LOW. Upon the 
+// RESET button being pressed (goes LOW) and if the input is healthy (HIGH) 
+// then the PORT A pin will extinguish and become available for future alarms.
+// There is also a lamp test facility which drives all PORT B pins HIGH while
+// pressed (goes LOW). Serial data is output as JSON format for SCADA update.
 
 #include "Wire.h"
 
@@ -12,7 +40,7 @@ const int healthPin = 13;
 const int speakerPin = 8;
 const int freq = 2000;
 
-// Remote IO
+// REMOTE IO
 
 const int chipCount = 2;
 const int totalRegisters = 3;
