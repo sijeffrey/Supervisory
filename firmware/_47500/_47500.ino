@@ -152,19 +152,6 @@ void alarms(int ic)
     }
   }
 
-  // debug registers
-  //Serial.print("FlashReg: ");
-  //Serial.print(flashReg[ic], BIN);
-  //Serial.print("\n");
-
-  //Serial.print("InputReg: ");
-  //Serial.print(inputs, BIN);
-  //Serial.print("\n--\n");
-
-  //Serial.print("steadyRg: ");
-  //Serial.print(steadyReg[ic], BIN);
-  //Serial.print("\n--\n");
-
   // check for reset button pressed and clear all related registers
   // loop over the steady array and check for reset button pressed:
   for (int i=0; i < 8; i++) {
