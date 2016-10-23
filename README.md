@@ -9,6 +9,10 @@ This project is designed to replace end of life equipment no longer supported.
 - ILQ74 (opto-coupler)
 - ULN2803A (Darlington Transistor Array)
 
+### Project
+
+This was designed to replace a PLC type function in an alarm system. Hopefully expanding to other sites in the future. A dedicated PLC was considered but cost was an issue.
+
 ### Operation
 
 The system scans the inputs on the MCP23017 and detects any unhealthy state (LOW) pins.
@@ -16,10 +20,6 @@ If a LOW pin is detected then the FLASH register is set and the BUZZER is activa
 Upon the ACCEPT pin going low on the ATmega328 the FLASH register is cleared and the STEADY register is set.
 Upon the RESET pin going low on the ATmega328 AND the corresponding MCP23017 pin being healthy then the STEADY register is cleared.
 The outputs reflect the registers (FLASH anded with an on/off timer) or STEADY or if the LAMPTEST pin is low.
-
-### Project
-
-This was designed to replace a PLC type function in an alarm system. Hopefully expanding to other sites in the future. A dedicated PLC was considered but cost was an issue.
 
 ### Feedback
 
