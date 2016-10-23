@@ -1,6 +1,6 @@
 # Supervisory Alarm System
 
-This is a simple attempt at connecting a couple of wireless transmitters (NRF24L01+) together to make a remotely activated motion switch.
+This project is designed to replace end of life equipment no longer supported.
 
 ### Devices used:
 
